@@ -1,0 +1,49 @@
+.review-form {
+    max-width: 750px;
+    margin: 0 auto;
+    margin-top: 35px;
+    padding: 20px;
+    color: white;
+    background-color: #2a4743;
+    border-radius: 10px;
+    box-shadow: 10px 15px 15px rgba(0.1, 0.1, 0.1, 0.1);
+}
+
+.review-form .form-group {
+    margin-bottom: 15px;
+}
+
+.review-form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.review-form .form-group input,
+.review-form .form-group select,
+.review-form .form-group textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.review-form .form-group.button-group {
+    text-align: center;
+}
+
+.review-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #2a4743;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto; /* Centering the button */
+    display: block; /* Ensuring it behaves like a block element */
+}
+
+.review-form button:hover {
+   background-color: white;
+}
+

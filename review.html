@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTIST</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles3.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <div class="logo-container">
+                    <img style="width: 15%;" src="vidhura.jpg" > 
+                </div>
+            </div>
+            
+            <div class="Navitems">
+                <a href="index.html">HOME</a>
+                <a href="shop.html">SHOP</a>
+                <a href="help.html">HELP</a>
+                <a href="review.html">REVIEWS</a>
+                <a href="blog.html">BLOG</a>
+            </div>
+        </div>
+        <div class="review-form">
+            <h2 style="font-size: 35px; text-align: center; color: white;">Submit Your Review</h2>
+             <form action="submit-review.php" method="post">
+                 <div class="form-group">
+                     <label for="name">Name:</label>
+                     <input type="text" id="name" name="name" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="email">Email:</label>
+                     <input type="email" id="email" name="email" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="rating">Rating:</label>
+                     <select id="rating" name="rating" required>
+                         <option value="5">5 Stars</option>
+                         <option value="4">4 Stars</option>
+                         <option value="3">3 Stars</option>
+                         <option value="2">2 Stars</option>
+                         <option value="1">1 Star</option>
+                     </select>
+                 </div>
+                 <div class="form-group">
+                     <label for="review">Review:</label>
+                     <textarea id="review" name="review" rows="4" required></textarea>
+                 </div>
+                 <button type="submit">Submit Review</button>
+             </form>
+         </div>
+     </div>
+   
+ <br>
+ <br>
+     
+ <footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h2>About Us</h2>
+            <p>The future of food production lies in collaboration, education, and community. Vidhura is more than just a platform. It’s a movement that empowers farmers, supports students, and promotes sustainable practices for generations to come. As we begin small, we have a big vision: to adopt villages, help farmers grow, and build a future where fresh, affordable, and sustainable food is accessible to everyone.</p>
+        </div>
+        <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p>Email: vidhuraofficial@gmail.com</p>
+            <p>Phone: 8897532632</p>
+            <div class="socials">
+                <a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook"></a>
+                <a href="https://x.com/Sanjana_velma"><img src="twitter.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/_sanjana_velma_"><img src="insta.png" alt="Instagram"></a>
+                <a href="https://www.linkedin.com/in/-sanjanareddy-velma/"><img src="linkedin.png" alt="linkedin"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
