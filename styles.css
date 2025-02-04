@@ -11,13 +11,14 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 10px;
+    padding: 5px 5px;
     color:#2a4743;
     font-weight: bold;
     width: 100%;
     box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.7);
 }
 .logo-container img{
+    display: grid;
     align-items: center;
     margin-left: 33px;
     margin-top: 5px;
