@@ -4,34 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="chat.css">
-
-    <script>
-        async function translateSpeech() {
-            let language = document.getElementById("language").value;
-            document.getElementById("status").innerText = "Listening...";
-            
-            let response = await fetch('/translate', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ language: language })
-            });
-
-            let data = await response.json();
-
-            if (data.error) {
-                document.getElementById("status").innerText = data.error;
-            } else {
-                document.getElementById("status").innerText = "Translation Complete!";
-                document.getElementById("output").innerText = data.translated_text;
-                document.getElementById("audio").src = data.audio_url;
-                document.getElementById("audio").play();
-            }
-        }
-    </script>
 </head>
 <body>
     <div class="container">
@@ -50,31 +24,6 @@
                 <a href="blog.html">BLOG</a>
             </div>
         </div>
-        <div class="container2">
-            <div class="title">Let's Chat</div>
-            <div class="chat" id="chat"></div>
-            <input type="text" class="input" id="input" placeholder="Type your message here...." />
-            <button class="button" id="button"><i class="fa-brands fa-telegram"></i></button>
-          </div>
-          <script src="script.js"></script>
-          
-        <h2>Speech Translator</h2>
-        <label for="language">Choose Language:</label>
-        <select id="language">
-            <option value="hindi">Hindi</option>
-            <option value="french">French</option>
-            <option value="spanish">Spanish</option>
-            <option value="german">German</option>
-            <option value="chinese">Chinese</option>
-            <option value="japanese">Japanese</option>
-        </select>
-        <button onclick="translateSpeech()">Translate Speech</button>
-        <p id="status"></p>
-        <p><strong>Translated Text:</strong> <span id="output"></span></p>
-        <audio id="audio" controls></audio>
-    
-        <h1 style="font-size: 45px; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); color: #14452f; font-family: Times New Roman;">LOCATION</h1>
-    <div id = "map"></div>
        <footer>
         <div class="footer-content">
             <div class="footer-section about">
