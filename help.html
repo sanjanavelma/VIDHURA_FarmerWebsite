@@ -20,34 +20,67 @@
         }
 
         body {
-            background-color: #f8fff9;
+            background-color: #14452f;
             color: #333;
         }
 
         /* HEADER */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #14452f;
-            padding: 10px 40px;
-        }
+.header {
+    background-color: rgba(255, 255, 255, 0);
+    position: relative;
+}
 
-        .logo img {
-            width: 60px;
-            border-radius: 10px;
-        }
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 5px;
+    color:#2a4743;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 2px 8px 15px rgba(0, 0, 0, 0.7);
+}
+.logo-container img{
+    display: grid;
+    align-items: center;
+    margin-left: 33px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.Navitems {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0); /* Transparent background for navigation */
+}
+    .header .Navitems{
+    display: flex;
+    flex-direction: row;
+    align-items: right;
+    justify-content: right;
+    align-items: center;
+    margin-right: 12px;
+}
+.header .Navitems a{
+    text-decoration: none;
+    color: #2a4743;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    font-size: 32px;
+    margin-left: 20px;
+    margin-right: 12px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.header .Navitems a:hover{
+    font-size: 37px;
+}
 
-        .Navitems a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .Navitems a:hover {
-            text-decoration: underline;
-        }
+.header .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
 
         /* CHAT + TRANSLATOR SECTION */
         .container2 {
@@ -256,7 +289,7 @@
             </div>
             
             <div class="Navitems">
-                <a href="#">HOME</a>
+                <a href="index.html">HOME</a>
                 <a href="shop.html">SHOP</a>
                 <a href="help.html">HELP</a>
                 <a href="review.html">REVIEWS</a>
@@ -379,5 +412,6 @@
     </script>
 </body>
 </html>
+
 
 
