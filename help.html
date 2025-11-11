@@ -3,32 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="chat.css">
+    <title>Help | Vidhura</title>
+
+    <!-- Pyscript + Fonts + Icons -->
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Custom CSS -->
+    <style>
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #f8fff9;
+            color: #333;
+        }
+
+        /* HEADER */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #14452f;
+            padding: 10px 40px;
+        }
+
+        .logo img {
+            width: 60px;
+            border-radius: 10px;
+        }
+
+        .Navitems a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .Navitems a:hover {
+            text-decoration: underline;
+        }
+
+        /* CHAT + TRANSLATOR SECTION */
+        .container2 {
+            background: #ffffff;
+            margin: 30px auto;
+            width: 90%;
+            max-width: 700px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .title {
+            font-size: 28px;
+            text-align: center;
+            color: #14452f;
+            margin-bottom: 20px;
+        }
+
+        .chat {
+            border: 1px solid #ccc;
+            height: 250px;
+            border-radius: 10px;
+            padding: 10px;
+            overflow-y: auto;
+            background: #f8f8f8;
+        }
+
+        .input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 15px;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #14452f;
+            border: none;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #0d3321;
+        }
+
+        /* PLANT DISEASE DETECTOR SECTION */
+        .disease-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: #f5fff8;
+            border-top: 2px solid #cce5cc;
+        }
+
+        .section-title {
+            font-size: 40px;
+            color: #14452f;
+            margin-bottom: 10px;
+        }
+
+        .section-desc {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .upload-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-box {
+            position: relative;
+            border: 2px dashed #4caf50;
+            border-radius: 15px;
+            padding: 30px;
+            background-color: #ffffff;
+            width: 320px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .upload-label {
+            display: inline-block;
+            cursor: pointer;
+            background: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .upload-label:hover {
+            background: #388e3c;
+        }
+
+        #plantImage {
+            display: none;
+        }
+
+        #preview {
+            display: none;
+            margin-top: 20px;
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .detect-btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #14452f;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .detect-btn:hover {
+            background-color: #0f3524;
+        }
+
+        .result-container {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        #diseaseName {
+            font-size: 22px;
+            color: #2e7d32;
+            font-weight: 600;
+        }
+
+        #confidence {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* MAP */
+        #map {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        iframe {
+            border-radius: 10px;
+            border: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #14452f;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .footer-section {
+            flex: 1;
+            padding: 15px;
+            max-width: 400px;
+        }
+
+        .footer-section h2 {
+            color: #f9f9f9;
+            margin-bottom: 10px;
+        }
+
+        .footer-section p {
+            color: #ddd;
+            line-height: 1.6;
+        }
+
+        .socials img {
+            width: 30px;
+            margin: 5px;
+            border-radius: 50%;
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            border-top: 1px solid #2e7d32;
+            padding-top: 10px;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <div class="logo-container">
-                    <img style="width: 15%;" src="vidhura.jpg" > 
-                </div>
-            </div>
-            
-            <div class="Navitems">
-                <a href="index.html">HOME</a>
-                <a href="shop.html">SHOP</a>
-                <a href="help.html">HELP</a>
-                <a href="review.html">REVIEWS</a>
-                <a href="blog.html">BLOG</a>
-            </div>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <img src="vidhura.jpg" alt="Vidhura Logo">
         </div>
-       <footer>
+        <div class="Navitems">
+            <a href="index.html">HOME</a>
+            <a href="shop.html">SHOP</a>
+            <a href="help.html">HELP</a>
+            <a href="review.html">REVIEWS</a>
+            <a href="blog.html">BLOG</a>
+        </div>
+    </div>
+
+    <!-- Chat + Translator -->
+    <div class="container2">
+        <div class="title">Let's Chat</div>
+        <div class="chat" id="chat"></div>
+        <input type="text" class="input" id="input" placeholder="Type your message here...." />
+        <button class="button" id="button"><i class="fa-brands fa-telegram"></i></button>
+
+        <h2 style="margin-top:40px; color:#14452f;">Speech Translator</h2>
+        <label for="language">Choose Language:</label>
+        <select id="language">
+            <option value="hindi">Hindi</option>
+            <option value="french">French</option>
+            <option value="spanish">Spanish</option>
+            <option value="german">German</option>
+            <option value="chinese">Chinese</option>
+            <option value="japanese">Japanese</option>
+        </select>
+        <button onclick="translateSpeech()">Translate Speech</button>
+        <p id="status"></p>
+        <p><strong>Translated Text:</strong> <span id="output"></span></p>
+        <audio id="audio" controls></audio>
+    </div>
+
+    <!-- Plant Disease Detector -->
+    <section class="disease-section">
+        <h1 class="section-title">🌱 Plant Disease Detector</h1>
+        <p class="section-desc">Upload an image of your plant leaf and let our AI identify the disease instantly!</p>
+
+        <div class="upload-container">
+            <div class="upload-box">
+                <input type="file" id="plantImage" accept="image/*" onchange="previewImage(event)">
+                <label for="plantImage" class="upload-label"><i class="fa-solid fa-upload"></i> Choose Image</label>
+                <img id="preview" src="" alt="Preview will appear here">
+            </div>
+
+            <button class="detect-btn" onclick="detectDisease()">Detect Disease</button>
+        </div>
+
+        <div class="result-container">
+            <h3 id="diseaseName"></h3>
+            <p id="confidence"></p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <h1 style="font-size: 45px; text-align: center; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); color: #14452f;">LOCATION</h1>
+    <div id="map"></div>
+
+    <!-- Footer -->
+    <footer>
         <div class="footer-content">
             <div class="footer-section about">
                 <h2>About Us</h2>
-                <p>The future of food production lies in collaboration, education, and community. Vidhura is more than just a platform. It’s a movement that empowers farmers, supports students, and promotes sustainable practices for generations to come. As we begin small, we have a big vision: to adopt villages, help farmers grow, and build a future where fresh, affordable, and sustainable food is accessible to everyone.</p>
+                <p>The future of food production lies in collaboration and community. Vidhura is more than a platform — it’s a movement that empowers farmers, students, and promotes sustainability.</p>
             </div>
             <div class="footer-section contact">
                 <h2>Contact Us</h2>
@@ -38,16 +325,55 @@
                     <a href="https://www.facebook.com/"><img src="facebook.png" alt="Facebook"></a>
                     <a href="https://x.com/Sanjana_velma"><img src="twitter.png" alt="Twitter"></a>
                     <a href="https://www.instagram.com/_sanjana_velma_"><img src="insta.png" alt="Instagram"></a>
-                    <a href="https://www.linkedin.com/in/-sanjanareddy-velma/"><img src="linkedin.png" alt="linkedin"></a>
+                    <a href="https://www.linkedin.com/in/-sanjanareddy-velma/"><img src="linkedin.png" alt="LinkedIn"></a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Your Company. All rights reserved.</p>
+            <p>&copy; 2024 Vidhura. All rights reserved.</p>
         </div>
     </footer>
-</body>
-</html>
 
+    <!-- JS Section -->
+    <script>
+        // Translator Dummy Function (Frontend Only)
+        async function translateSpeech() {
+            document.getElementById("status").innerText = "Listening...";
+            setTimeout(() => {
+                document.getElementById("status").innerText = "Translation Complete!";
+                document.getElementById("output").innerText = "Sample translated text (demo)";
+            }, 2000);
+        }
+
+        // Image Preview
+        function previewImage(event) {
+            const preview = document.getElementById('preview');
+            preview.src = URL.createObjectURL(event.target.files[0]);
+            preview.style.display = 'block';
+        }
+
+        // Mock Prediction for Frontend Demo
+        async function detectDisease() {
+            const fileInput = document.getElementById('plantImage');
+            if (!fileInput.files.length) {
+                alert("Please upload an image first!");
+                return;
+            }
+            document.getElementById('diseaseName').innerText = "Detecting...";
+            document.getElementById('confidence').innerText = "";
+            
+            setTimeout(() => {
+                document.getElementById('diseaseName').innerText = "🌿 Disease: Tomato Leaf Spot (Demo)";
+                document.getElementById('confidence').innerText = "Confidence: 94.23%";
+            }, 2000);
+        }
+
+        // Map Script
+        navigator.geolocation.getCurrentPosition(position => {
+            const { latitude, longitude } = position.coords;
+            document.getElementById("map").innerHTML = `
+                <iframe width="100%" height="500" src="https://maps.google.com/maps?q=${latitude},${longitude}&z=15&output=embed"></iframe>`;
+        });
+    </script>
 </body>
 </html>
