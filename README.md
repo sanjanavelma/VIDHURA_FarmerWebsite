@@ -35,6 +35,7 @@ Farmers, students, and experts can collaborate and share knowledge.
 **AI / ML**
 - Image-based plant disease detection
 - Machine learning models for crop analysis
+- 
 LIVE DEMO: https://sanjanavelma.github.io/VIDHURA_FarmerWebsite/
 VIDHURA aims to bridge the gap between technology and agriculture by providing:
 Smart AI tools for farmers
@@ -42,11 +43,13 @@ Fair market access
 Affordable equipment
 Sustainable farming practices
 The platform focuses on empowering farmers with data-driven insights and community support.
+
 👩‍💻 Contributors
 Sanjana Velma - https://www.linkedin.com/in/-sanjanareddy-velma/
 Poorvi Shasta - https://www.linkedin.com/in/poorvireddy1/
 Mule Charitha - https://www.linkedin.com/in/mulecharitha16/
 Project Team – VIDHURA
+
 📜 License
 This project is developed for educational and research purposes.
 Feel free to contribute and improve the platform.
